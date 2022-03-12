@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::get('/', [LoginController::class, 'loginViaRemember'])->name('login');
+
+Route::match(['get','post'], '/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::prefix('dashboard')->middleware('auth')->group(function () {
+    Route::get('/', [DashController::class, 'index'])->name('dashboard');
 });
