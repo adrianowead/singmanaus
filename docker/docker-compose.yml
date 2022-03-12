@@ -7,7 +7,7 @@ services:
     environment:
       - MYSQL_DATABASE=sing_db
       - MYSQL_ROOT_PASSWORD=sing_pwd
-      - MYSQL_TCP_PORT=3307
+      - MYSQL_TCP_PORT=3306
     ports:
       - target: 3306
         published: 3307
