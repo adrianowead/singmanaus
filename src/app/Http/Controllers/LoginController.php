@@ -12,7 +12,7 @@ class LoginController extends Controller
      */
     public function loginViaRemember()
     {
-        if(Auth::viaRemember()) return redirect()->route('dashboard');
+        if(Auth::check()) return redirect()->route('dashboard');
 
         return view('login');
     }
