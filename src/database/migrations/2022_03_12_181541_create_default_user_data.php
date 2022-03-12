@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
@@ -28,6 +29,13 @@ return new class extends Migration
         if($id) {
             echo "Senha: {$passwd}\n";
         }
+
+        $user = User::getUserByEmail($email);
+
+        $user->created_at = Carbon::now();
+        $user->email_verified_at = Carbon::now();
+
+        $user->save();
     }
 
     /**
