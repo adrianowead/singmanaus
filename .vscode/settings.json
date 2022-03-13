@@ -1,0 +1,6 @@
+{
+    "php.validate.enable": false,
+    "docker-linter.php.enable": true,
+    "docker-linter.php.container": "sing-manaus_php_1",
+    "docker-linter.php.machine": ""
+}
