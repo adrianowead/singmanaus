@@ -4,7 +4,9 @@
 FROM adrianowead/viware-base-php:1.1.0
 
 # instalar nodejs
-RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | /bin/bash -
+
+RUN apt-get update
 
 RUN apt-get install -y nodejs
 
