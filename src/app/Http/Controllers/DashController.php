@@ -8,6 +8,6 @@ class DashController extends Controller
 {
     public function index(Request $request)
     {
-        echo "Dashboard";
+        return view('dash');
     }
 }

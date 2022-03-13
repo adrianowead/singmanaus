@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'loginViaRemember'])->name('login');
 
 Route::match(['get','post'], '/login', [LoginController::class, 'authenticate']);
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::match(['get','post'], '/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::prefix('dashboard')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [DashController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::match(['get','post'], '/passwd', [ProfileController::class, 'changePasswd'])->name('changePasswd');
 });
