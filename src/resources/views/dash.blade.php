@@ -7,5 +7,7 @@
 @stop
 
 @section('content')
+    @include('partials.alerts')
+
     <p>Welcome to this beautiful admin panel.</p>
 @stop

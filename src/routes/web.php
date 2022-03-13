@@ -24,6 +24,6 @@ Route::match(['get','post'], '/logout', [LoginController::class, 'logout'])->nam
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [DashController::class, 'index'])->name('dashboard');
-    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-    Route::match(['get','post'], '/passwd', [ProfileController::class, 'changePasswd'])->name('changePasswd');
+    Route::get('/profile/{id?}', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('/profile-update', [ProfileController::class, 'profileUpdate'])->name('profileUpdate');
 });

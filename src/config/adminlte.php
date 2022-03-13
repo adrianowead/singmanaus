@@ -238,11 +238,6 @@ return [
             'url'  => 'admin/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/passwd',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
     ],
 
     /*

@@ -23,7 +23,8 @@ return new class extends Migration
         $id = User::createUser(
             name: 'Admin',
             email: $email,
-            password: $passwd
+            password: $passwd,
+            isAdmin: true
         );
 
         if($id) {
