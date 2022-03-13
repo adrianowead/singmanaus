@@ -26,3 +26,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+window.$ = window.jQuery = require('jquery');
+
+require('overlayscrollbars');
+require('bootstrap');
+require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');
